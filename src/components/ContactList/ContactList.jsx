@@ -1,14 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Contact } from 'components/Contact/Contact';
+import { useSelector } from 'react-redux';
 
+export function ContactList({ deleteContact }) {
+  const contacts = useSelector(state => state.contactData.contacts);
+  const filter = useSelector(state => state.contactData.filter);
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().trim().includes(filter.toLowerCase())
+  );
 
-export function ContactList({ contacts, deleteContact }) {
   return (
     <>
       <div>
-        {contacts.length > 0 &&
-          contacts.map(contact => {
+        {filteredContacts.length > 0 ? (
+          filteredContacts.map(contact => {
             return (
               <Contact
                 key={contact.id}
@@ -16,19 +21,11 @@ export function ContactList({ contacts, deleteContact }) {
                 {...contact}
               />
             );
-          })}
+          })
+        ) : (
+          <p>Your phonebook is empty . Please add contact.</p>
+        )}
       </div>
     </>
   );
 }
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-  deleteContact: PropTypes.func.isRequired,
-};
