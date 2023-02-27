@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/contactsSlice';
+import { addFilter } from 'redux/filterSlice';
 import s from './Filter.module.css';
 
 export function Filter() {
@@ -7,7 +7,7 @@ export function Filter() {
 
   const filter = useSelector(state => state.contactData.filter);
   const handleFilter = ({ target: { value } }) => {
-    dispatch(setFilter(value));
+    dispatch(addFilter(value));
   };
   return (
     <div style={{ margin: '20px auto', width: '500px' }}>

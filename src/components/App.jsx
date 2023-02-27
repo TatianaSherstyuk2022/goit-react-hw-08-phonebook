@@ -13,7 +13,7 @@ export function App() {
       <h2>Phonebook</h2>
       <ContactForm />
       <h2>Contacts</h2>
-      {contacts.length > 1 && <Filter />}
+      {contacts?.length > 1 && <Filter />}
       <ContactList />
     </Container>
   );
