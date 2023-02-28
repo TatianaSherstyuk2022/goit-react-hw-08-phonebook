@@ -1,12 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { selectContacts } from 'redux/selectors';
+
 import { Container } from './Container/Container';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
-import { useSelector } from 'react-redux';
 
 export function App() {
-  const contacts = useSelector(state => state.contactData.contacts);
+  const contacts = useSelector(selectContacts);
 
   return (
     <Container>

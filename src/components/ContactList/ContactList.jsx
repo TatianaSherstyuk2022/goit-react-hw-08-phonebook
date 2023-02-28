@@ -3,11 +3,12 @@ import { Contact } from 'components/Contact/Contact';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
+import { selectContacts, selectFilter } from 'redux/selectors';
 
 export function ContactList() {
-  const contacts = useSelector(state => state.contactData.contacts);
-  const filter = useSelector(state => state.contactData.filter);
-  console.log(contacts, filter);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
+
   const dispatch = useDispatch();
 
   const filteredContacts = contacts?.filter(contact =>
