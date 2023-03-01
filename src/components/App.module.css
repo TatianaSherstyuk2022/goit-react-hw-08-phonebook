@@ -1,0 +1,13 @@
+.link {
+    display: inline-block;
+    margin: 7px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #fff;
+    padding: 12px;
+    padding-top: 9px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 250ms linear, color 250ms linear;
+}

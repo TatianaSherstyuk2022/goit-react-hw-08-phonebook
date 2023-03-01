@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginRequest } from 'redux/userSlice';
 
-export function SingInPage() {
+export function SignInPage() {
   const dispatch = useDispatch();
 
   const handleLogin = formData => {

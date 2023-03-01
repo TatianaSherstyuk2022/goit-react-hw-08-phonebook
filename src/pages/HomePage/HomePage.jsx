@@ -5,6 +5,7 @@ export function HomePage() {
     <div>
       <div>
         <h1>Your private PhoneBook</h1>
+        <h2>To start using Sign In or Sign Up</h2>
       </div>
     </div>
   );

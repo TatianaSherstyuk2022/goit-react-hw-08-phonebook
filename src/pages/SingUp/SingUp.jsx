@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { registerRequest } from 'redux/userSlice';
 
-export function SingUpPage() {
+export function SignUpPage() {
   const dispatch = useDispatch();
 
   const handleRegister = formData => {

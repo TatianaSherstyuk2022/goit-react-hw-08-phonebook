@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectStatus } from 'redux/selectorsUser';
+import s from './AuthForm.module.css';
 
 export function AuthForm({ onSubmit, isLoginForm = false }) {
   const nameInputRef = useRef();
@@ -22,7 +23,7 @@ export function AuthForm({ onSubmit, isLoginForm = false }) {
     event.target.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={s.form}>
       <h2 className="form-title">{isLoginForm ? 'Sign In' : 'Sign Up'}</h2>
       {isLoginForm ? null : (
         <label className="input-group">
