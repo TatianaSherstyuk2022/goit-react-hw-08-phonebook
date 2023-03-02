@@ -4,8 +4,8 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import { HomePage } from 'pages/HomePage/HomePage';
 import { SignInPage } from 'pages/SingIn/SingIn';
 import { SignUpPage } from 'pages/SingUp/SingUp';
-import { ContactsPage } from 'pages/Contacts/Contacts';
 import style from '../components/App.module.css';
+import ContactsPage from 'pages/Contacts/Contacts';
 
 export function App() {
   // const contacts = useSelector(selectContacts);
