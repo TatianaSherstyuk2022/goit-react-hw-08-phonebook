@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectAuthError, selectIsLoggedIn } from 'redux/selectorsUser';
 import { registerRequest } from 'redux/userSlice';
+import s from './SignUp.module.css';
 
-export function SignUpPage() {
+function SignUpPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -23,7 +24,12 @@ export function SignUpPage() {
 
   return (
     <div>
+      {error !== null && (
+        <p className={s.text}>Sorry, an error occurred... {error}</p>
+      )}
       <AuthForm onSubmit={handleRegister} />
     </div>
   );
 }
+
+export default SignUpPage;

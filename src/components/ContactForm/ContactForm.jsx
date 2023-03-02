@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import { selectStatus } from 'redux/selectorsUser';
+import { Loader } from 'components/Loader/Loader';
+import s from './ContactForm.module.css';
 
 function ContactForm({ onSubmit }) {
   const nameInputRef = useRef();
@@ -22,7 +24,7 @@ function ContactForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={s.form}>
       <h2 className="form-title">Add contact</h2>
       <label className="input-group">
         <span>Name: </span>
@@ -51,6 +53,7 @@ function ContactForm({ onSubmit }) {
       >
         Add contact
       </button>
+      {status === 'pending' && <Loader />}
     </form>
   );
 }

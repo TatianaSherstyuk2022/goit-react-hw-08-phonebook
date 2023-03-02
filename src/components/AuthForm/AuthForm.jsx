@@ -27,19 +27,20 @@ export function AuthForm({ onSubmit, isLoginForm = false }) {
       <h2 className="form-title">{isLoginForm ? 'Sign In' : 'Sign Up'}</h2>
       {isLoginForm ? null : (
         <label className="input-group">
-          <span>Name: </span>
+          <span className={s.span}>Name: </span>
           <input type="text" name="name" ref={nameInputRef} required />
         </label>
       )}
       <label className="input-group">
-        <span>Email: </span>
+        <span className={s.span}>Email: </span>
         <input type="email" name="email" ref={emailInputRef} required />
       </label>
       <label className="input-group">
-        <span>Password: </span>
+        <span className={s.span}>Password: </span>
         <input
           type="password"
           name="password"
+          autoComplete="on"
           minLength={7}
           ref={passwordInputRef}
           required

@@ -1,0 +1,9 @@
+.text {
+    background-color: red;
+    color: aliceblue;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 auto;
+}

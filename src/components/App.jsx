@@ -1,14 +1,18 @@
-import React, { Suspense, useEffect } from 'react';
-
-import { NavLink, Route, Routes } from 'react-router-dom';
-import { HomePage } from 'pages/HomePage/HomePage';
-import { SignInPage } from 'pages/SingIn/SingIn';
-import { SignUpPage } from 'pages/SingUp/SingUp';
-import style from '../components/App.module.css';
-import ContactsPage from 'pages/Contacts/Contacts';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, Route, Routes } from 'react-router-dom';
+
 import { selectIsLoggedIn, selectUserData } from 'redux/selectorsUser';
 import { getCurrentUserRequest, logOutRequest } from 'redux/userSlice';
+
+import style from '../components/App.module.css';
+import { Container } from './Container/Container';
+import { Loader } from './Loader/Loader';
+
+const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const SignInPage = lazy(() => import('pages/SingIn/SingIn'));
+const SignUpPage = lazy(() => import('pages/SingUp/SingUp'));
+const ContactsPage = lazy(() => import('pages/Contacts/Contacts'));
 
 export function App() {
   const dispatch = useDispatch();
@@ -27,7 +31,7 @@ export function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <Container>
       <header>
         {isLoggedIn ? (
           <>
@@ -40,8 +44,10 @@ export function App() {
               </NavLink>
             </div>
             <div>
-              <span>Hello, {userData.name}</span>
-              <button onClick={handleLogOut}>Logout</button>
+              <span>{userData.email}</span>
+              <button onClick={handleLogOut} className={style.link}>
+                Logout
+              </button>
             </div>
           </>
         ) : (
@@ -63,7 +69,7 @@ export function App() {
         )}
       </header>
 
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/contacts" element={<ContactsPage />} />
@@ -71,6 +77,6 @@ export function App() {
           <Route path="sign-up" element={<SignUpPage />} />
         </Routes>
       </Suspense>
-    </>
+    </Container>
   );
 }

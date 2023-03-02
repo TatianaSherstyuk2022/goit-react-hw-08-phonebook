@@ -25,11 +25,10 @@ h2{
         font-weight: 700;
 }
 
-span {
+.span {
     display: inline-block;
         width: 100px;
         margin-right: 30px;
-        text-align: right;
 }
 
 label {
@@ -52,7 +51,7 @@ button {
     padding: 15px 25px;
         font-size: 20px;
         border: none;
-        background-color: #704bf5;
+        background-color: #5056ab;
         border-radius: 25px;
         cursor: pointer;
         color: white;
