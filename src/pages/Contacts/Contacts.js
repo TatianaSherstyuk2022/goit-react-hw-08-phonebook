@@ -1,5 +1,6 @@
 
 import ContactForm from 'components/ContactForm/ContactForm';
+import WithAuthRedirect from 'components/HOC/WithAuthRedirect';
 
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +11,7 @@ import { selectIsLoggedIn } from 'redux/selectorsUser';
 function ContactsPage() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(selectContacts);
   const status = useSelector(selectContactStatus);
   const error = useSelector(selectContactError);
 
@@ -44,7 +45,7 @@ function ContactsPage() {
                 {contact.number}
               </p>
               <button onClick={() => handleDeleteContact(contact.id)}>
-                &times;
+                Delete
               </button>
             </li>
           ))}
@@ -54,4 +55,4 @@ function ContactsPage() {
   );
 }
 
-export default ContactsPage;
+export default WithAuthRedirect(ContactsPage, '/sign-in');
