@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 import { UserAPI } from 'services/api';
 
 export const loginRequest = createAsyncThunk(
@@ -80,7 +81,6 @@ const userSlice = createSlice({
       })
       .addCase(loginRequest.rejected, rejectHandler)
 
-
       .addCase(registerRequest.pending, pendingHandler)
       .addCase(registerRequest.fulfilled, (state, action) => {
         state.status = 'resolved';
@@ -90,7 +90,6 @@ const userSlice = createSlice({
       })
       .addCase(registerRequest.rejected, rejectHandler)
 
-
       .addCase(logOutRequest.pending, pendingHandler)
       .addCase(logOutRequest.fulfilled, state => {
         state.status = 'resolved';
@@ -99,7 +98,6 @@ const userSlice = createSlice({
         state.userData.email = null;
       })
       .addCase(logOutRequest.rejected, rejectHandler)
-
 
       .addCase(getCurrentUserRequest.pending, pendingHandler)
       .addCase(getCurrentUserRequest.fulfilled, (state, action) => {

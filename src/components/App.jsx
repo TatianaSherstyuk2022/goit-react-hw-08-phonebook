@@ -4,10 +4,10 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 
 import { selectIsLoggedIn, selectUserData } from 'redux/selectorsUser';
 import { getCurrentUserRequest, logOutRequest } from 'redux/userSlice';
-
-import style from '../components/App.module.css';
 import { Container } from './Container/Container';
 import { Loader } from './Loader/Loader';
+
+import style from '../components/App.module.css';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const SignInPage = lazy(() => import('pages/SingIn/SingIn'));

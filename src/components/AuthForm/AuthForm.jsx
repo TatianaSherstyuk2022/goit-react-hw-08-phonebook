@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+
 import { selectStatus } from 'redux/selectorsUser';
+
 import s from './AuthForm.module.css';
 
 export function AuthForm({ onSubmit, isLoginForm = false }) {

@@ -1,41 +1,41 @@
 .container {
-    font-style: italic;
-    position: relative;
-        display: flex;
-        justify-content: center;
-        min-height: calc(100vh - 150px);
+  font-style: italic;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 150px);
 }
 
-.box{
-    text-align: center;
+.box {
+  text-align: center;
 }
 
-.textbox{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.textbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .textone {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .texttwo {
-    font-weight: 500;
-        font-size: 60px;
-        justify-self: start;
+  font-weight: 500;
+  font-size: 60px;
+  justify-self: start;
 }
 
 .text {
-    font-weight: 700;
-        font-size: 100px;
+  font-weight: 700;
+  font-size: 100px;
 }
 
 .infotext {
-    position: absolute;
-        bottom: 50px;
-        left: 20px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        font-size: 30px;
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
 }

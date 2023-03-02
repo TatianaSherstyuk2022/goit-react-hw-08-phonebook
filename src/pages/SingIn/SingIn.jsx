@@ -1,9 +1,12 @@
-import { AuthForm } from 'components/AuthForm/AuthForm';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+import { AuthForm } from 'components/AuthForm/AuthForm';
+
 import { selectAuthError, selectIsLoggedIn } from 'redux/selectorsUser';
 import { loginRequest } from 'redux/userSlice';
+
 import s from './SingIn.module.css';
 
 function SignInPage() {

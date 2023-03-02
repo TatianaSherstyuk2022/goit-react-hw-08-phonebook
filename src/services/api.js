@@ -21,15 +21,6 @@ const authInterceptor = config => {
 
 $privateHost.interceptors.request.use(authInterceptor);
 
-/*
-{
-  baseURL: "https://connections-api.herokuapp.com",
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': token...,
-  },
-}
-*/
 
 export const UserAPI = {
   async register(formData) {

@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-
 import { selectStatus } from 'redux/selectorsUser';
+
 import { Loader } from 'components/Loader/Loader';
+
 import s from './ContactForm.module.css';
 
 function ContactForm({ onSubmit }) {

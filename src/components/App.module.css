@@ -12,3 +12,8 @@
     transition: background-color 250ms linear, color 250ms linear;
 }
 
+.text {
+    display: inline-block;
+    padding-right: 20px;
+}
+

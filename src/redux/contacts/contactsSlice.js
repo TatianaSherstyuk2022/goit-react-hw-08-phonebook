@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { ContactsAPI } from 'services/api';
 
-
 export const getContactsRequest = createAsyncThunk(
   'contacts/getContacts',
   async (_, { rejectWithValue }) => {
@@ -48,27 +47,29 @@ const initialState = {
 };
 
 const contactsSlice = createSlice({
-    name: 'contacts',
-    initialState,
-    reducers: {},
-    extraReducers: builder =>
-        builder
-    
-    .addCase(getContactsRequest.pending, pendingHandler)
+  name: 'contacts',
+  initialState,
+  reducers: {},
+  extraReducers: builder =>
+    builder
+
+      .addCase(getContactsRequest.pending, pendingHandler)
       .addCase(getContactsRequest.fulfilled, (state, action) => {
         state.status = 'resolved';
         state.contacts = action.payload;
       })
       .addCase(getContactsRequest.rejected, rejectHandler)
-    
-    .addCase(addContactRequest.pending, pendingHandler)
+
+
+      .addCase(addContactRequest.pending, pendingHandler)
       .addCase(addContactRequest.fulfilled, (state, action) => {
         state.status = 'resolved';
         state.contacts = [...state.contacts, action.payload];
       })
       .addCase(addContactRequest.rejected, rejectHandler)
 
-    .addCase(deleteContactRequest.pending, pendingHandler)
+      
+      .addCase(deleteContactRequest.pending, pendingHandler)
       .addCase(deleteContactRequest.fulfilled, (state, action) => {
         state.status = 'resolved';
         state.contacts = state.contacts.filter(
@@ -76,8 +77,7 @@ const contactsSlice = createSlice({
         );
       })
       .addCase(deleteContactRequest.rejected, rejectHandler),
-
-})
+});
 
 function pendingHandler(state) {
   state.error = null;
