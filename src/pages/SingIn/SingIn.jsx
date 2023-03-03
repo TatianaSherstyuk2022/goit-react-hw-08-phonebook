@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthForm } from 'components/AuthForm/AuthForm';
 
-import { selectAuthError, selectIsLoggedIn } from 'redux/selectorsUser';
-import { loginRequest } from 'redux/userSlice';
+import { selectAuthError, selectIsLoggedIn } from 'redux/user/selectorsUser';
+import { loginRequest } from 'redux/user/userSlice';
 
 import s from './SingIn.module.css';
 

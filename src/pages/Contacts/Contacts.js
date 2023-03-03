@@ -7,7 +7,7 @@ import { Loader } from 'components/Loader/Loader';
 
 import {addContactRequest, deleteContactRequest, getContactsRequest} from 'redux/contacts/contactsSlice';
 import {selectContactError, selectContacts, selectContactStatus, selectFilteredContacts} from 'redux/contacts/selectorContacts';
-import { selectIsLoggedIn } from 'redux/selectorsUser';
+import { selectIsLoggedIn } from 'redux/user/selectorsUser';
 
 import s from './Contacts.module.css';
 import { Filter } from 'components/Filter/Filter';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectIsLoggedIn } from 'redux/selectorsUser';
+import { selectIsLoggedIn } from 'redux/user/selectorsUser';
 
 import s from './HomePage.module.css';
 

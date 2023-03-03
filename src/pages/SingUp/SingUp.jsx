@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { AuthForm } from 'components/AuthForm/AuthForm';
 
-import { selectAuthError, selectIsLoggedIn } from 'redux/selectorsUser';
-import { registerRequest } from 'redux/userSlice';
+import { selectAuthError, selectIsLoggedIn } from 'redux/user/selectorsUser';
+import { registerRequest } from 'redux/user/userSlice';
 
 import s from './SignUp.module.css';
 

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { selectStatus } from 'redux/selectorsUser';
+import { selectStatus } from 'redux/user/selectorsUser';
 
 import { Loader } from 'components/Loader/Loader';
 

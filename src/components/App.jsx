@@ -2,8 +2,8 @@ import React, { lazy, Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, Routes } from 'react-router-dom';
 
-import { selectIsLoggedIn, selectUserData } from 'redux/selectorsUser';
-import { getCurrentUserRequest, logOutRequest } from 'redux/userSlice';
+import { selectIsLoggedIn, selectUserData } from 'redux/user/selectorsUser';
+import { getCurrentUserRequest, logOutRequest } from 'redux/user/userSlice';
 import { Container } from './Container/Container';
 import { Loader } from './Loader/Loader';
 

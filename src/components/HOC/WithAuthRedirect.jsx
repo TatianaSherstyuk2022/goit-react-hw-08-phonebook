@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-import { selectIsLoggedIn } from 'redux/selectorsUser';
+import { selectIsLoggedIn } from 'redux/user/selectorsUser';
 
 function WithAuthRedirect(Component, navigateTo) {
   const ComponentWithRedirect = props => {
