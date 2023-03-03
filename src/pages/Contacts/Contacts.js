@@ -6,10 +6,11 @@ import WithAuthRedirect from 'components/HOC/WithAuthRedirect';
 import { Loader } from 'components/Loader/Loader';
 
 import {addContactRequest, deleteContactRequest, getContactsRequest} from 'redux/contacts/contactsSlice';
-import {selectContactError, selectContacts, selectContactStatus} from 'redux/contacts/selectorContacts';
+import {selectContactError, selectContacts, selectContactStatus, selectFilteredContacts} from 'redux/contacts/selectorContacts';
 import { selectIsLoggedIn } from 'redux/selectorsUser';
 
 import s from './Contacts.module.css';
+import { Filter } from 'components/Filter/Filter';
 
 function ContactsPage() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function ContactsPage() {
   const contacts = useSelector(selectContacts);
   const status = useSelector(selectContactStatus);
   const error = useSelector(selectContactError);
+  const filterContacts = useSelector(selectFilteredContacts);
 
   useEffect(() => {
     if (!isLoggedIn) return;
@@ -39,9 +41,10 @@ function ContactsPage() {
       {error !== null && (
         <p className={s.text}>Sorry, an error occurred... {error}</p>
       )}
-      {contacts?.length > 0 && (
+      {contacts?.length > 1 && <Filter />}
+      {filterContacts?.length > 0 && (
         <ul className={s.list}>
-          {contacts?.map(contact => (
+          {filterContacts?.map(contact => (
             <li key={contact.id} className={s.contact}>
               <p>
                 <b>Name: </b>

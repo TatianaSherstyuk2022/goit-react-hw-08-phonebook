@@ -44,12 +44,17 @@ const initialState = {
   contacts: [],
   status: 'idle', // 'idle' | 'pending' | 'resolved' | 'rejected'
   error: null,
+  filter: '',
 };
 
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-  reducers: {},
+  reducers: {
+    setFilter(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: builder =>
     builder
 
@@ -87,5 +92,7 @@ function rejectHandler(state, action) {
   state.status = 'rejected';
   state.error = action.payload;
 }
+
+export const { setFilter} = contactsSlice.actions;
 
 export const contactReducer = contactsSlice.reducer;
